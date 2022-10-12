@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_test_calicut/app/login_page/view/widget/textform_field.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -8,7 +9,6 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(
-          
           children: [
             Center(
               child: Image.asset(
@@ -17,18 +17,10 @@ class LoginPage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  label: Text("Username"),
-                    prefixIcon: const Icon(Icons.person),
-                  
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    )),
-                    
-              ),
+            const CustomTextFromField(
+              keyboardAppearnce: TextInputType.emailAddress,
+              title: 'Username',
+              icon: Icons.person,
             ),
           ],
         ),
