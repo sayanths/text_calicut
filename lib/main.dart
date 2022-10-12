@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:login_test_calicut/app/splash_screen/view/splash_screen.dart';
+import 'package:login_test_calicut/app/splash_screen/view_model/splashscreen_controller.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider<SplashScreenController>(
+        create: ((context) => SplashScreenController()))
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -14,11 +19,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'logistics',
       theme: ThemeData(
-      
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }
-
