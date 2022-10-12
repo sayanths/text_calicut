@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_test_calicut/app/routes/routes.dart';
 import 'package:login_test_calicut/app/splash_screen/view/splash_screen.dart';
 import 'package:login_test_calicut/app/splash_screen/view_model/splashscreen_controller.dart';
 import 'package:provider/provider.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      key: Routes.navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'logistics',
       theme: ThemeData(
