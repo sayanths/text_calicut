@@ -6,14 +6,15 @@ class CustomTextFromField extends StatelessWidget {
   final String title;
   final IconData icon;
   final bool obsureText;
+  final TextEditingController controller;
 
   const CustomTextFromField({
     Key? key,
-   
     this.validator,
     required this.title,
-    required this.icon, required this.obsureText,
-      this.keyboardAppearnce,
+    required this.icon,
+    required this.obsureText,
+    this.keyboardAppearnce, required this.controller,
   }) : super(key: key);
 
   @override
@@ -21,6 +22,7 @@ class CustomTextFromField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: TextFormField(
+        controller: controller,
         obscureText: obsureText,
         keyboardType: keyboardAppearnce,
         validator: validator,
