@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 
 class CustomTextFromField extends StatelessWidget {
-final  TextInputType keyboardAppearnce;
-final String? Function(String?)? validator;
-final String title;
-final IconData icon;
-
+  final TextInputType? keyboardAppearnce;
+  final String? Function(String?)? validator;
+  final String title;
+  final IconData icon;
+  final bool obsureText;
 
   const CustomTextFromField({
-    Key? key, required this.keyboardAppearnce, this.validator, required this.title, required this.icon,
+    Key? key,
+   
+    this.validator,
+    required this.title,
+    required this.icon, required this.obsureText,
+      this.keyboardAppearnce,
   }) : super(key: key);
 
   @override
@@ -16,16 +21,16 @@ final IconData icon;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: TextFormField(
-        keyboardType:keyboardAppearnce ,
-        validator:validator ,
+        obscureText: obsureText,
+        keyboardType: keyboardAppearnce,
+        validator: validator,
         decoration: InputDecoration(
-          label:  Text(title),
-            prefixIcon:  Icon(icon),
-          focusedBorder:OutlineInputBorder() ,
+            label: Text(title),
+            prefixIcon: Icon(icon),
+            focusedBorder: const OutlineInputBorder(),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             )),
-            
       ),
     );
   }
