@@ -8,14 +8,28 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(
+          
           children: [
             Center(
-                child: Image.asset(
-              "assets/login_logo.jpeg",
-              height: 110,
-              fit: BoxFit.cover,
-            ),),
-            
+              child: Image.asset(
+                "assets/login_logo.jpeg",
+                height: 110,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  label: Text("Username"),
+                    prefixIcon: const Icon(Icons.person),
+                  
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    )),
+                    
+              ),
+            ),
           ],
         ),
       ),
