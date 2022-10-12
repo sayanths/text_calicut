@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_test_calicut/app/login_page/view/login_page.dart';
 import 'package:login_test_calicut/app/routes/routes.dart';
 import 'package:login_test_calicut/app/splash_screen/view/splash_screen.dart';
 import 'package:login_test_calicut/app/splash_screen/view_model/splashscreen_controller.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      home: const LoginPage(),
     );
   }
 }
