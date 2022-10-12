@@ -36,14 +36,21 @@ class LoginPage extends StatelessWidget {
                   title: 'Username',
                   icon: Icons.person,
                   validator: (value) {
-                    value!.isNotEmpty ? const Text("sd") : null;
-                    return null;
+                    if (value!.isNotEmpty||value==null) {
+                      return 'dsdsd';
+                    } else {
+                      return null;
+                    }
                   },
                 ),
                 height20,
                 CustomTextFromField(
                   validator: (value) {
-                    return null;
+                    if (value!.isNotEmpty||value==null) {
+                      return 'dsdsd';
+                    } else {
+                      return null;
+                    }
                   },
                   controller: loginController.passwordController,
                   obsureText: true,
